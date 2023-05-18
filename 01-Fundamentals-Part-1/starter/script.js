@@ -214,6 +214,33 @@ HINT: Use an if/else statement 😉
 // n = n - 1; // 10 = 11 -1
 // console.log(n); // 10
 
-// Truthy and Falsy values are
-// 5 falsy value
-// 0, "", undefined, null , NaN
+// Truthy and Falsy //
+
+// 5 falsy values : 0, "", undefined, null NaN
+
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean("Jonas"));
+// console.log(Boolean({}));
+// console.log(Boolean(""));
+
+// const money = 0;
+
+// if (money) {
+//   console.log("Don't spend it all");
+// } else {
+//   console.log("Get a job.");
+// }
+
+// let height = 0;
+// if (height) {
+//   console.log("Yay, height is defined.");
+// } else {
+//   console.log("Please try again, undefined.");
+// }
+
+// Equality operators: == vs. ===;
+
+const age = 18;
+
+if (age === 18) console.log("Age must be adult.");
