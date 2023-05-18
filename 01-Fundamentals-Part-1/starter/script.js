@@ -241,6 +241,25 @@ HINT: Use an if/else statement 😉
 
 // Equality operators: == vs. ===;
 
-const age = 18;
+// const age = 18;
 
-if (age === 18) console.log("Age must be adult.");
+// if (age === 18) console.log("strict");
+
+// if (age == 18) console.log("loose");
+
+// const favorite = Number(prompt("What is you favorite number?"));
+// console.log(favorite);
+// // Equal operator ===: strict version
+// if (favorite === 23) {
+//   console.log("Cool! 23 is an amazing number!");
+// } else if (favorite === 7) {
+//   console.log("7 is a good number!");
+// } else {
+//   console.log("number is not 23 or 7");
+// }
+// // Different operator !==: strict version
+// if (favorite !== 23) {
+//   console.log("Why not 23?");
+// }
+
+// Boolean Logic
