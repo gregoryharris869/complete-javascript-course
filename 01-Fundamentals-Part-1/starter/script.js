@@ -263,3 +263,21 @@ HINT: Use an if/else statement 😉
 // }
 
 // Boolean Logic
+
+// const age = 16;
+// A: Age is greater then or equal to20. false
+// B: Age is less then 30. true
+
+// Logical Operations
+
+const hasDriversLicense = true; // A
+
+const hasGoodVision = false; // B
+
+console.log(hasDriversLicense && hasGoodVision); // And &&
+
+console.log(hasDriversLicense || hasGoodVision); // Or ||
+
+console.log(!hasDriversLicense); // Not !
+
+const shouldDrive = hasDriversLicense && hasGoodVision;
