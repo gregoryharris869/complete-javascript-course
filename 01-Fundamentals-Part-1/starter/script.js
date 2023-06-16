@@ -270,14 +270,15 @@ HINT: Use an if/else statement 😉
 
 // Logical Operations
 
-const hasDriversLicense = true; // A
+const hasDriversLicense = true;
+const hasGoodVision = false;
 
-const hasGoodVision = false; // B
+console.log(hasDriversLicense && hasGoodVision); // and
+console.log(hasDriversLicense || hasGoodVision); // 0r
+console.log(!hasDriversLicense); // not
 
-console.log(hasDriversLicense && hasGoodVision); // And &&
-
-console.log(hasDriversLicense || hasGoodVision); // Or ||
-
-console.log(!hasDriversLicense); // Not !
-
-const shouldDrive = hasDriversLicense && hasGoodVision;
+if (hasDriversLicense && hasGoodVision) {
+  console.log("Able to drive!");
+} else {
+  console.log("Not able to drive!");
+}
