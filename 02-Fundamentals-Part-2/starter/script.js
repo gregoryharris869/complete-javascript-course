@@ -21,15 +21,25 @@
 
 // Function Declaration
 
-function calcAge1(birthDate) {
-  return 2037 - birthDate;
-}
-const age1 = calcAge1(1981);
+// function calcAge1(birthDate) {
+//   return 2037 - birthDate;
+// }
+// const age1 = calcAge1(1981);
 
-// Function Expression
+// // Function Expression
+
+// const calcAge2 = function (birthDate) {
+//   return 2037 - birthDate;
+// };
+// const age2 = calcAge2(1981);
+// console.log(age1, age2);
 
 const calcAge2 = function (birthDate) {
   return 2037 - birthDate;
 };
-const age2 = calcAge2(1981);
-console.log(age1, age2);
+
+// Arrow function
+
+const calcAge3 = (birthDate) => 2037 - birthDate;
+const age3 = calcAge3(1981);
+console.log(age3);
