@@ -32,9 +32,13 @@ const restaurant = {
   },
 
   orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
-    console.log(
-      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
-    );
+    // console.log(
+    //   `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
+    // );
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your pasta with ${ing1}, ${ing2}, and ${ing3}`);
   },
 };
 
@@ -44,18 +48,60 @@ restaurant.orderDelivery({
   mainIndex: 2,
   starterIndex: 2,
 });
+// Rest Patterns and Parameters
 
 // Spread Operator
 
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
+// const ingredients = [
+//   prompt(`"Let\'s make pasta! Ingredient 1?"`),
+//   prompt(`"Ingredient 2?"`),
+//   prompt(`"Ingredient 3?"`),
+// ];
+// console.log(ingredients);
 
-// Spread
+// restaurant.orderPasta(...ingredients);
 
-const newArr = [1, 2, ...arr];
-console.log(newArr);
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
 
+// // Spread
+
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+
+// console.log(...newArr);
+// console.log(1, 2, 7, 8, 9);
+
+// const newMenu = [...restaurant.mainMenu, 'Gnocchi'];
+// console.log(newMenu);
+
+// // Copy Array
+
+// const mainMenuCopy = [...restaurant.mainMenu];
+
+// // Join 2 arrays
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// // Iterables: arrays,strings,maps, sets. Not objects.
+
+// const str = 'Jonas';
+// const letters = [...str, '', 'S.'];
+// console.log(letters);
+// console.log(...str);
+
+// // Objects
+
+// const newRestaurant = { ...restaurant, founder: 'Guiseppe', foundedIn: 1998 };
+// console.log(newRestaurant);
+
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.nameOf = 'Roma';
+// console.log(restaurantCopy.nameOf);
+// console.log(restaurant.nameOf);
+
+///////////////////////////////////
 // Destructure objects
 
 // const { nameOf, openingHours, categories } = restaurant;
