@@ -49,6 +49,11 @@ restaurant.orderDelivery({
   starterIndex: 2,
 });
 // Rest Patterns and Parameters
+// Spread, because on Right side of  =
+
+const arr = [1, 2, ...[3, 4]];
+
+const [a, b, ...others] = [1, 2, 3, 4, 5];
 
 // Spread Operator
 
