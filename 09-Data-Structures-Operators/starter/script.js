@@ -40,6 +40,11 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your pasta with ${ing1}, ${ing2}, and ${ing3}`);
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredient) {
+    console.log(mainIngredient);
+    console.log(otherIngredient);
+  },
 };
 
 restaurant.orderDelivery({
@@ -48,12 +53,78 @@ restaurant.orderDelivery({
   mainIndex: 2,
   starterIndex: 2,
 });
+
+// Short Circuiting (&& and ||)
+//  Use ANY data type, return ANY data type, short-circuiting
+
+console.log('--- OR ---');
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+// restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+console.log('--- AND ---');
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+
+console.log('hello' && 23 && null && 'Jonas');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+////////////////////////////////////////////////////////////////////////
 // Rest Patterns and Parameters
+// Destructuring
 // Spread, because on Right side of  =
 
-const arr = [1, 2, ...[3, 4]];
+// const arr = [1, 2, ...[3, 4]];
 
-const [a, b, ...others] = [1, 2, 3, 4, 5];
+// // Rest, because on left side of =
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
+
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+
+// console.log(pizza, risotto, otherFood);
+
+// // objects rest pattern
+
+// const { sat, ...weekDays } = restaurant.openingHours;
+// console.log(weekDays);
+
+// // Functions
+
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
+// add(2, 3);
+// add(5, 3, 7, 2);
+// add(8, 2, 5, 3, 2, 1, 4);
+
+// const x = [23, 5, 7];
+// console.log(x);
+// add(...x);
+
+// restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+// restaurant.orderPizza('mushrooms');
+////////////////////////////////////////////////////////////
 
 // Spread Operator
 
