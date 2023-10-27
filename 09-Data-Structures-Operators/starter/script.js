@@ -54,35 +54,61 @@ restaurant.orderDelivery({
   starterIndex: 2,
 });
 
-// Short Circuiting (&& and ||)
-//  Use ANY data type, return ANY data type, short-circuiting
+const rest1 = {
+  name: 'Capri',
+  numGuests: 20,
+};
 
-console.log('--- OR ---');
-console.log(3 || 'Jonas');
-console.log('' || 'Jonas');
-console.log(true || 0);
-console.log(undefined || null);
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
 
-console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+////////////////////////////////////////////////////////////////////////
+// Logical Assignment Operators
 
-// restaurant.numGuests = 23;
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
+rest1.numbGuests = rest1.numGuests || 10;
+rest2.numbGuests = rest2.numGuests || 10;
+console.log(rest1);
+console.log(rest2);
 
-const guest2 = restaurant.numGuests || 10;
-console.log(guest2);
+////////////////////////////////////////////////////////////////////////////
+// The Nullish Coalescing OPerator (??)
 
-console.log('--- AND ---');
-console.log(0 && 'Jonas');
-console.log(7 && 'Jonas');
+// restaurant.numGuests = 0;
+// const guest = restaurant.numGuests || 10;
+// console.log(guest);
 
-console.log('hello' && 23 && null && 'Jonas');
+// // Nullish: null and undefined(NOT 0 or "")
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log(guestCorrect);
 
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushrooms', 'spinach');
-}
+// console.log('--- OR ---');
+// console.log(3 || 'Jonas');
+// console.log('' || 'Jonas');
+// console.log(true || 0);
+// console.log(undefined || null);
 
-restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+// // restaurant.numGuests = 23;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
+
+// const guest2 = restaurant.numGuests || 10;
+// console.log(guest2);
+
+// console.log('--- AND ---');
+// console.log(0 && 'Jonas');
+// console.log(7 && 'Jonas');
+
+// console.log('hello' && 23 && null && 'Jonas');
+
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushrooms', 'spinach');
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
 ////////////////////////////////////////////////////////////////////////
 // Rest Patterns and Parameters
