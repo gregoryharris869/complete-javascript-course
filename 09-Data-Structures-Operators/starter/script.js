@@ -5,6 +5,24 @@ const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 // Data needed for first part of the section
+
+const weekdays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurant = {
   nameOf: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -12,22 +30,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  // ES6 enhanced object literals
+  openingHours,
 
-  order: function (starterIndex, mainIndex) {
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
@@ -46,6 +52,30 @@ const restaurant = {
     console.log(otherIngredient);
   },
 };
+// optional chaining
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Methods optional chaining
+
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist.');
+
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist.');
+
+// Arrays
+
+const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
+
+console.log(users[0]?.name ?? 'User array empty.');
 
 restaurant.orderDelivery({
   time: '22:30',
@@ -67,10 +97,15 @@ const rest2 = {
 
 // The for of loop
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-for (const item of menu) console.log(item);
+// for (const item of menu) console.log(item);
 
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
+
+// console.log(...menu.entries());
 ////////////////////////////////////////////////////////////////////////
 // Logical Assignment Operators
 
